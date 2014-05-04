@@ -1,28 +1,12 @@
 #include  <stdio.h>
 #include  <stdlib.h>
 #include  "StackArray.h"
-#include  "BinaryTree.h"
-#define     EmptyTOS -1
-#define     MinStackSize 100
 
-typedef	int ElementType;
-
-struct StackRecord{
-	int Capacity;
-	int TopOfStack;
-	ElementType *Array;
-};
 
 //创建栈
 Stack CreatStack(int MaxElements)
 {
 	Stack S;
-
-	if(MaxElements < MinStackSize)
-	{
-		printf("Stack size is too small!\n");
-		return NULL;
-	}
 
 	S = (Stack)malloc(sizeof(struct StackRecord));
 	if(S == NULL)
@@ -94,10 +78,12 @@ int Push(ElementType X, Stack S)
 }
 
 //返回栈顶元素
-ElementType Top(Stack S)
+int Top(Stack S, ElementType *result)
 {
-	if(IsEmpty(S) == 0)		//非空
-		return S->Array[S->TopOfStack];
+	if(IsEmpty(S) == 0)	{	//非空
+		*result =  S->Array[S->TopOfStack];
+		return 0;
+	}
 	else
 	  return -1;
 }
