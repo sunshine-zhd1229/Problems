@@ -1,0 +1,12 @@
+struct StackRecord;
+typedef struct StackRecord *Stack;
+typedef int ElementType;
+int IsEmpty(Stack S);
+int IsFull(Stack S);
+Stack CreatStack(int MaxElements);
+void DisposeStack(Stack S);
+void MakeEmpty(Stack S);
+int Push(ElementType X, Stack S);
+ElementType Top(Stack S);
+void Pop(Stack S);
+int TopAndPop(Stack S, ElementType *X);
