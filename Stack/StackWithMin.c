@@ -1,3 +1,8 @@
+/*****
+ * 实现一个能够得到栈的最小元素的min函数。
+ × min push pop的时间复杂度均为O(1)。
+ * *****/
+
 #include  <stdio.h>
 #include  <string.h>
 #include  <stdlib.h>
