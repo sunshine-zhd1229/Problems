@@ -50,17 +50,20 @@ Postion FindPrevious(ElementType X, List L)
 }
 
 //将新元素插入到指定节点之后
-void Insert(ElementType X, List L, Postion P)
+int Insert(ElementType X, Postion P)
 {
 	Postion TmpCell;
 	if(P == NULL)
-	  return;
-	TmpCell = (Postion)malloc(sizeof(struct Node));
-	if(TmpCell == NULL)
+	  return 0;
+	TmpCell = (Postion)malloc(sizeof(struct List_Node));
+	if(TmpCell == NULL) {
 	  perror("malloc in Insert error: ");
+	  return -1;
+	}
 	TmpCell->Element = X;
 	TmpCell->Next = P->Next;
 	P->Next = TmpCell;
+	return 1;
 }
 
 //删除表
@@ -75,5 +78,3 @@ void DeleteList(List L)
 		P = Tmp;
 	}
 }
-
-
