@@ -1,5 +1,5 @@
 int ErrorFlag = 0;
-static void MaxHeapify(int Heap[], int index);
+void MaxHeapify(int Heap[], int index);
 void MaxHeapifyLoop(int Heap[], int index);
 int BuildMaxHeap(int Heap[]);
 void HeapSort(int Heap[]);

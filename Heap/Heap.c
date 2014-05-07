@@ -13,7 +13,7 @@ void Switch (int *x, int *y)
 }
 
 //保持以Heap[index]为根的最大堆的性质，Heap[0]中存储最大堆中元素个数，假定以left、right为根的堆均满足最大堆性质
-static void MaxHeapify(int Heap[], int index)
+void MaxHeapify(int Heap[], int index)
 {
     int left = index * 2, right = left + 1, largest = index;
     if (index <= 0 || index > Heap[0])
