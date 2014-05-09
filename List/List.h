@@ -6,6 +6,7 @@ struct List_Node{
 };
 
 typedef struct List_Node *PtrToNode;
+typedef struct List_Node ListNode;
 typedef PtrToNode List;
 typedef PtrToNode Postion;
 
