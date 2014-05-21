@@ -42,3 +42,18 @@ char *ReverseSentence(char * string)
     }
     return string;
 }
+
+//左旋字符串
+char *LeftRotateString(char* string, int num)
+{
+    if (string == NULL || num <= 0)
+      return string;
+
+    int length = strlen(string);
+    num = num % length;
+
+    Reverse(string, string + num - 1);
+    Reverse(string + num, string + length - 1);
+    Reverse(string, string + length - 1);
+    return string;
+}
